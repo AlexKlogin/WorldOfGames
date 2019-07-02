@@ -1,6 +1,7 @@
 import MemoryGame
 import GuessGame
 import CurrencyRouletteGame
+import Score
 
 # Function to welcome a player. It gets name and prints greeting
 def welcome(name) :
@@ -48,6 +49,7 @@ def load_game() :
 
     if result == True:
         print("                                     You won")
+        Score.add_score(user__dificulty_choice)
     else:
         print("                                     You lost")
 

@@ -1,7 +1,7 @@
 import random
 from time import sleep
-import os
-import sys
+from Utils import Screen_cleaner
+
 
 difficulty = 3
 list = []
@@ -36,8 +36,8 @@ def is_list_equal():
     print("You chose memory Game. Try to memorize the following set of numbers (you have only 0.9 sec.): ")
     print((list1))
     sleep(0.9)
-    #os.system("cls")                  # Works only in Windows shell
     print("\n"*100)                   # Clears screen in Pycharm screen
+    Screen_cleaner()
     list2 = set(get_list_from_user())
     print("System casted numbers: " + str(list1) + ", you entered numbers : " + str(list2) + "." )
     if len(list1 & list2) == difficulty:
