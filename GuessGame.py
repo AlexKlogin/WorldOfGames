@@ -1,7 +1,7 @@
 import random
 
 
-difficulty = 0
+difficulty = 3
 secret_number = 0
 
 def generate_number():
@@ -34,4 +34,8 @@ def play():
     generate_number()
     return compare_results()
 
+
+def set_difficulty(difficulty_value):
+    global difficulty
+    difficulty = difficulty_value
 

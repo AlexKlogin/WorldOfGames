@@ -33,3 +33,7 @@ def play():
           str("{:3.2f}".format(upper_interval)) + ") , and your guess is " + str(guess_from_user) + ".")
     return (guess_from_user <= upper_interval) & (guess_from_user >= lower_interval)
 
+
+def set_difficulty(difficulty_value):
+    global difficulty
+    difficulty = difficulty_value

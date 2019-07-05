@@ -9,7 +9,7 @@ list = []
 def generate_sequence():
     global list
     for index in range(0, difficulty):
-       list.append(random.randint(1, 101))
+       list.append(random.randint(1, 100))
 
 
 def get_list_from_user():
@@ -30,17 +30,17 @@ def get_list_from_user():
     return guess_list
 
 
-
+# Compares list of values created by the system with list of values created by user
 def is_list_equal():
     list1 = set(list)
     print("You chose memory Game. Try to memorize the following set of numbers (you have only 0.9 sec.): ")
     print((list1))
     sleep(0.9)
     print("\n"*100)                   # Clears screen in Pycharm screen
-    Screen_cleaner()
+    Screen_cleaner()                  # Clears screen in cmd
     list2 = set(get_list_from_user())
     print("System casted numbers: " + str(list1) + ", you entered numbers : " + str(list2) + "." )
-    if len(list1 & list2) == difficulty:
+    if len(list1 & list2) == difficulty:  # Number of elements in intersection have to be equal to difficulty
         return True
     return False
 
@@ -48,5 +48,10 @@ def is_list_equal():
 def play():
     generate_sequence()
     return is_list_equal()
+
+
+def set_difficulty(difficulty_value):
+    global difficulty
+    difficulty = difficulty_value
 
 

@@ -1,4 +1,5 @@
 from flask import Flask
+import Utils
 
 app = Flask(__name__)
 
@@ -24,15 +25,16 @@ no_error_html_template = '<html>' \
             '</body>' \
       '</html>'
 
-import Utils
 
+# This function will serve the score. It will read the score from the scores file
+# and will rbe shown on scores site
 @app.route("/")
-def home():
-    try:
-        with open('Scores.txt', "r") as file:
+def score_server():
+    try:   # try to open file with scores. If succeeded, define BAD_RETURN_CODE = 0
+        with open(Utils.SCORES_FILE_NAME, "r") as file:
             current_score = file.read()
             Utils.define_BAD_RETURN_CODE(0)
-    except:
+    except: # If not succeeded, define BAD_RETURN_CODE = 1
         print('Could not open Scores.txt.')
         Utils.define_BAD_RETURN_CODE(1)
 
@@ -41,11 +43,6 @@ def home():
     else:
         html_text = error_html_template.format(ERROR = "Read-Write Error")
     return html_text
-
-
-@app.route("/salvador")
-def salvador():
-    return "Hello, Salvador"
 
 
 if __name__ == "__main__":

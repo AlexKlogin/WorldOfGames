@@ -38,13 +38,13 @@ def load_game() :
                 print("\t\t!!!!!!!!!!!!!!!   Numbers from 1 to 5 are only allowed   !!!!!!!!!!!!!!!!!\n")
 
     if user__game_choice == 2:
-        GuessGame.difficulty = user__dificulty_choice
+        GuessGame.set_difficulty(user__dificulty_choice)
         result = GuessGame.play()
     elif user__game_choice == 1:
-        MemoryGame.difficulty = user__dificulty_choice
+        MemoryGame.set_difficulty(user__dificulty_choice)
         result = MemoryGame.play()
     elif user__game_choice == 3:
-        CurrencyRouletteGame.difficulty = user__dificulty_choice
+        CurrencyRouletteGame.set_difficulty(user__dificulty_choice)
         result = CurrencyRouletteGame.play()
 
     if result == True:
@@ -52,5 +52,6 @@ def load_game() :
         Score.add_score(user__dificulty_choice)
     else:
         print("                                     You lost")
+        Score.create_zero_score()
 
 
