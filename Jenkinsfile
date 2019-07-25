@@ -16,7 +16,7 @@ pipeline {
     stage('Running container') {
       steps{
       echo 'runnung..'
-      bat 'docker-compose up'
+      bat 'docker-compose up -d'
       }
     }
 
