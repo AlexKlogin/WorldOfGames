@@ -6,4 +6,4 @@ services:
     image: flask.3
     ports:
       - "5000:5000"
-    container_name: flask
+    container_name: flask1
