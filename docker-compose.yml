@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  flask:
+    build: .
+    image: flask.3
+    ports:
+      - "5000:5000"
+    container_name: flask
