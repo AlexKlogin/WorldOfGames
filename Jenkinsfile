@@ -15,12 +15,12 @@ pipeline {
     }
     stage('Running container') {
       steps{
-      echo 'runnung..'
+      echo 'running..'
       bat 'docker-compose up -d'
       }
     }
 
-    stage('testing container') {
+    stage('testing application') {
       steps{
       echo 'testing..'
       bat 'python tests/e2e.py'

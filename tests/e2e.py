@@ -16,7 +16,7 @@ def test_scores_service(URL):
         return False
 
 def main_function():
-    score = test_scores_service("http://192.168.99.100:5000")
+    score = test_scores_service("http://192.168.99.100:8777")
     if  (score)== True :
         print("Sucess: ")
         sys.exit(0)
