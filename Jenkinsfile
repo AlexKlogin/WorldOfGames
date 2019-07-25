@@ -10,9 +10,9 @@ pipeline {
     stage('Building image') {
       steps{
       echo 'Building..'
-        script {
-          'docker-compose build'
-        }
+
+        bat 'docker-compose build'
+
       }
     }
   }
