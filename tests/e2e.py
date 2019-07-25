@@ -16,8 +16,9 @@ def test_scores_service(URL):
         return False
 
 def main_function():
-    if  test_scores_service("http://127.0.0.1:5000/") == True :
-        print("Sucess")
+    score = test_scores_service("http://127.0.0.1:5000/")
+    if  (score)== True :
+        print("Sucess: ")
         sys.exit(0)
     else :
         print("Failure")
