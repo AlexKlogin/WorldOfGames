@@ -26,6 +26,5 @@ pipeline {
       bat 'python tests/e2e.py'
       }
     }
-
   }
 }
