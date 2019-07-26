@@ -36,10 +36,5 @@ pipeline {
               bat 'docker-compose push'
               bat 'docker-compose down --rmi all'
         }
-        failure {
-            mail to: 'iserjude@yahoo.com',
-            subject: "Failed Pipeline: ",
-            body: "Something is wrong "
-        }
        }
        }
