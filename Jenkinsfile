@@ -39,4 +39,5 @@ pipeline {
         failure {
             mail to: iserjude@yahoo.com, subject: 'The Pipeline failed :('
         }
-}
+       }
+       }
