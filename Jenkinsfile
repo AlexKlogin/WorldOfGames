@@ -37,7 +37,7 @@ pipeline {
               bat 'docker-compose down --rmi all'
         }
         failure {
-            mail to iserjude@yahoo.com, subject: 'The Pipeline failed '
+            mail to 'iserjude@yahoo.com' , subject: 'The Pipeline failed '
         }
        }
        }
