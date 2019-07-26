@@ -27,14 +27,16 @@ pipeline {
       }
     }
 
-    stage('Finalizing job') {
-      steps{
-      echo 'finalizing..'
-      bat 'docker login -u alexkalugin -p bap031001'
-      bat 'docker-compose push'
-      bat 'docker-compose down --rmi all'
-      }
-    }
 
   }
+  post {
+        always {
+              echo 'finalizing..'
+              bat 'docker login -u alexkalugin -p bap031001'
+              bat 'docker-compose push'
+              bat 'docker-compose down --rmi all'
+        }
+        failure {
+            mail to: iserjude@yahoo.com, subject: 'The Pipeline failed :('
+        }
 }
