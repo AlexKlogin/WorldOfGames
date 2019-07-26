@@ -26,5 +26,15 @@ pipeline {
       bat 'python tests/e2e.py'
       }
     }
+
+    stage('Finalizing job') {
+      steps{
+      echo 'finalizing..'
+      bat 'docker login -u alexkalugin -p bap031001'
+      bat 'docker-compose push'
+      bat 'docker-compose down --rmi all'
+      }
+    }
+
   }
 }
