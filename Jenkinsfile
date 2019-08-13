@@ -32,7 +32,7 @@ pipeline {
   post {
         always {
               echo 'finalizing..'
-              bat 'docker login -u alexkalugin -p bap031001'
+              bat 'docker login -u alexkalugin -p *******'
               bat 'docker-compose push'
               bat 'docker-compose down --rmi all'
         }
